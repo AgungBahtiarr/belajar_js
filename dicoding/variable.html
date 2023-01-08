@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let namaAwal = "agung ";
+        let namaAkhir = " bahtiar";
+        let biner = 0b010101;
+        let t = true;
+        let f = false;
+        let someData = null; //null bisa untuk nilai sementara
+        console.log(namaAwal+namaAkhir);
+        let a = 1;
+        console.log(a);
+        a = 2; //menggunakan let bisa di update
+        console.log(a);
+        const b = 1; // menggunakan const tidak bisa di update
+        console.log(b); 
+        console.log(typeof(b));
+        console.log(typeof(t));
+        console.log(typeof(f));
+        console.log(typeof(namaAwal));
+        console.log(typeof(biner));
+        console.log(`nama awal saya adalah ${namaAwal}`); //string concatenation menggunakan ``
+        console.log(someData); //nilai null
+
+
+        const id = Symbol("id"); //digunakan untuk menunjukkan identifier yang unik. Ketika membuat Symbol, kita bisa memberikan deskripsi atau nama symbol seperti ini:
+        console.log(id);
+
+        //membuat perbandingan symbol untuk identifier
+        const id1 = Symbol(1);
+        const id2 = Symbol(2);
+        console.log(id1 == id2) //hasil false
+    </script>
+</body>
+</html>

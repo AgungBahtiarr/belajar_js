@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread operaotr</title>
+</head>
+<body>
+    <script>
+
+        const favorites = ["Seafood", "Salad", "Nugget", "Soup"];
+        // .... Menyebarkan value dari array
+        console.log(...favorites);
+
+        // Menggabungkan 2 buar array menggunakan spread operator.
+        const array1 = ["1","2","3"];
+        const array2 = ["4","5","6"];
+        const array3 = [...array1,...array2];
+        console.log(...array3);
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Object</title>
+</head>
+<body>
+    <script>
+        const char = {
+            name : "Agung",
+            age : 19,
+            species : "human",
+            "Hair Color" : "Black",
+        };
+        console.log(`Haloo Nama saya ${char.name}`);
+        console.log(`Saya berumur ${char.age}`);
+        console.log(`Dengan species ${char.species}`)
+        console.log(`Dengan rambut berwarna ${char["Hair Color"]}`);
+        delete char.species;
+        console.log(`Dengan species ${char.species}`)
+        
+        
+        
+        const spaceship = {
+            name: "Millenium Falcon",
+            manufacturer: "Corellian Engineering Corporation",
+            maxSpeed: 1200,
+            color: "Light gray"
+        };
+
+        spaceship.color = "Glossy red";
+        spaceship["maxSpeed"] = 1300;
+        console.log(spaceship);
+
+    </script>
+</body>
+</html>

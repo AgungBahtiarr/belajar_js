@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Js</title>
+</head>
+<body>
+    <script>
+        /*
+        Map adalah tipe data yang menyimpan koleksi data 
+        dengan format key-value layaknya Object. Yang 
+        membedakan adalah Map memperbolehkan key dengan tipe data apa pun,
+        dibandingkan Object yang hanya mengizinkan key bertipe String atau Symbol.
+        */
+
+        const capital = new Map([
+            ["Jakarta", "Indonesia"],
+            ["London", "England"],
+            ["Tokyo", "Japan"]
+        ]);
+        // mengambil nilai dari key map
+        console.log(capital.get("Jakarta"));
+        console.log(capital.get("London"));
+        // menambahkan pasangan key value baru
+        capital.set("New Delhi", "India");
+        console.log(capital);
+
+
+    </script>
+</body>
+</html>

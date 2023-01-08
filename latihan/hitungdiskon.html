@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Program Sederhana JavaScript</h1>
+    <h2>Mehitung total belanja dan diskon</h2>
+    Masukkan jumlah belanja : <input id="jumlah_belanja" type="text">
+    <button onclick="discount()">Proses</button><br />
+    <p id="potongan"></p>
+    <p id="jumlah_bayar"></p>
+    <script>
+        var jumlah_belanja;
+        var potonganText = document.getElementById('potongan');
+        var jumlah_bayarText = document.getElementById('jumlah_bayar');
+        function discount() {
+            jumlah_belanja = document.getElementById('jumlah_belanja').value;
+            if (jumlah_belanja >= 100000) {
+                potonganText.innerHTML = "Jumlah Potongan : 10%";
+                jumlah_bayar = jumlah_belanja - (jumlah_belanja * 0.1);
+                jumlah_bayarText.innerHTML = "Jumlah bayar : " + jumlah_bayar;
+            } else {
+                potonganText.innerHTML = "Jumlah Potongan : 0%";
+                jumlah_bayarText.innerHTML = "Jumlah bayar : " + jumlah_belanja;
+            }
+        }
+    </script>
+</body>
+</html>

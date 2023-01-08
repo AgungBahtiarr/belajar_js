@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Set</title>
+</head>
+<body>
+    <script>
+        /*
+        Struktur data yang akan kita bahas berikutnya adalah Set.
+        Set sederhananya merupakan kumpulan nilai (set of values).
+        Hal yang membedakan Set dengan struktur data yang lain adalah data pada Set tidak berurutan dan juga tidak diindeks.
+        Selain itu, data di dalam Set juga bersifat unik dan tidak ada duplikasi.
+        */
+
+
+        const numberSet = new Set([1, 4, 6, 4, 1]);
+        console.log(numberSet);
+        // menambahkan data ke dalam set
+        numberSet.add(10);
+        numberSet.add(2);
+        numberSet.add(3);
+        console.log(numberSet);
+        // menghapus data dari set
+        numberSet.delete(1);
+        console.log(numberSet);
+
+    </script>
+</body>
+</html>
