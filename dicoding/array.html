@@ -10,6 +10,13 @@
         let myArray = ["Cokelat", 1 , true];
         console.log(myArray);
 
+        // menambahkan data  pada array
+        myArray.push(2);
+        // Menghapus data dalam array dan membiarkan index tersebut bernilai null
+        delete myArray[3]
+        // menghapus elemen
+        myArray.slice(3, 1); // menghapus index ke 3 sebanyak 1 elemen
+        console.log(myArray);
         // mengeluarkan array terakhir
         myArray.pop();
         console.log(myArray);

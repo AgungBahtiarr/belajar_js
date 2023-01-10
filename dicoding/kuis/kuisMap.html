@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Map</title>
+</head>
+<body>
+    <script>
+        const priceInJPY = 5000;
+        const currency = new Map([
+            ["USD", 14000],
+            ["JPY", 131],
+            ["SGD", 11000],
+            ["MYR", 3500]
+        ]);
+        let priceInIDR = currency.get("JPY") * priceInJPY;
+        console.log(priceInIDR)
+    </script>
+</body>
+</html>
