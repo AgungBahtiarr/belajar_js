@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Parameter</title>
+</head>
+<body>
+    <script>
+    // memanfaatkan destructuring Obeject untuk mendapatkan nilainya
+        const user = {
+        id: 24,
+        displayName: 'kren',
+        fullName: 'Kylo Ren',
+    };
+
+    function introduce({displayName, fullName}) {
+        console.log(`${displayName} is ${fullName}`);
+    }
+
+    introduce(user);
+
+
+    /*
+    Masih ingat dengan spread operator (...)? Jika spread operator menyebarkan array menjadi beberapa elemen berbeda,
+    rest parameter ini adalah kebalikan dari operator tersebut.
+    Penasaran?
+
+    Rest parameter juga dituliskan menggunakan three consecutive dots (...). Dengan rest parameter,
+    kita dapat menggabungkan beberapa elemen menjadi satu array.
+    Tentu teknik ini sangat bermanfaat ketika kita hendak membuat sebuah fungsi dengan parameter yang tidak pasti.
+
+    Sebagai contoh adalah fungsi yang menjumlahkan seluruh nilai argumen seperti berikut:
+    */
+
+    function sum(...numbers) {
+        let result = 0;
+        for (let number of numbers) {
+            result += number;
+        }
+        return result;
+    }
+
+    console.log(sum(1, 2, 3, 4, 5));
+
+    
+    </script>
+</body>
+</html>

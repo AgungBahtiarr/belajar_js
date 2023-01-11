@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Fungsi</title>
+</head>
+<body>
+    <script>
+        /**
+        fungsi juga bisa digunakan sebagai blok kode atau prosedur yang dapat digunakan secara berulang.
+        Dalam arti lain, kita dapat berpikir bahwa function merupakan sebuah variabel yang berisi blok logika.
+        Blok logika tersebut akan dieksekusi ketika variabelnya dipanggil.
+        Semua fungsi memiliki struktur yang sama. Fungsi dideklarasikan dengan keyword function dan nama fungsinya.
+        Nama fungsi selalu diikuti dengan tanda kurung (parentheses) tanpa spasi, lalu terdapat sepasang kurung kurawal yang berisi logika dari fungsi tersebut.
+
+        Terkadang di dalam tanda kurung kita membutuhkan sebuah informasi tambahan yang disebut dengan parameter.
+        Parameter merupakan data yang digunakan pada fungsi untuk diproses di dalamnya.
+        Sebagai contoh, fungsi console.log() dapat menerima argument berupa string atau data lain untuk ditampilkan ke konsol.
+
+
+        */
+
+        // Penggunaan Parameter
+
+        function fungsiSaya(a, b) {
+            return a * b;
+        }
+        console.log(fungsiSaya(5, 8));
+
+        /*
+        Agar fungsi bisa mengembalikan nilai, gunakan keyword return diikuti dengan nilai yang akan dikembalikan.
+         Nilai kembalian tidak hanya number, bisa juga berupa string, boolean, object, array, atau tipe yang lain.
+        */
+        function greeting(name, language) {
+            if(language === "English") {
+                return `Good Morning ${name}!`
+            } else if (language === "French") {
+                return `Bonjour ${name}!`;
+            } else {
+                return `Selamat Pagi ${name}!`;
+            }
+        }
+
+        let greetingMessage = greeting("Harry", "French");
+        console.log(greetingMessage);
+
+
+        /*
+        Expresion Function
+        Cara lain untuk membuat sebuah fungsi pada JavaScript adalah expression function.
+        Ingat kembali bahwa expression adalah kode atau instruksi yang mengembalikan nilai,
+        sehingga expression function bisa disimpan dalam sebuah variabel.
+
+        Pada expression function umumnya kita tidak perlu menuliskan nama fungsinya.
+         Fungsi yang tidak bernama juga dikenal dengan anonymous function. Berikut ini merupakan contoh penulisan expression function:
+        */
+
+        const greeting = function(name, language) {
+            if(language === "English") {
+                return "Good Morning " + name + "!";
+            } else if (language === "French") {
+                return "Bonjour " + name + "!";
+            } else {
+                return "Selamat Pagi " + name + "!";
+            }
+        }
+
+        console.log(greeting('Ron', 'English'));
+    </script>
+</body>
+</html>
