@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properti And Method</title>
+</head>
+<body>
+    <script>
+        /*
+            Properti merupakan bagian dari class yang mendefinisikan nilai-nilai yang terkandung dalam sebuah instance class.
+            Contohnya, jika Anda membuat class Car, properti adalah informasi yang sekiranya terdapat pada sebuah mobil seperti brand, color, maxSpeed, dan chasissNumber.
+            Contoh lain, jika Anda membuat class Mail, secara umum propertinya adalah sender, receiver, subject, dan body.
+
+            Nilai dari properti biasanya diambil dari dari argumen constructor agar nilainya dapat bervariasi setiap kali membuat instance.
+        */
+        class Car {
+            constructor(brand, color, maxSpeed, chassisNumber) { // Nilai Dari Properties diambill dari sini
+                this.brand = brand;
+                this.color = color;
+                this.maxSpeed = maxSpeed;
+                this.chassisNumber = chassisNumber;
+            }
+        }
+ 
+        const car1 = new Car('BMW', 'red', 200, 'b-1');
+        const car2 = new Car('Audi', 'blue', 220, 'a-1');
+        const car3 = new Car('BMW', 'black', 250, 'b-2');
+
+        console.log(car1);
+        console.log(car2);
+        console.log(car3);
+
+
+        /*  Lalu, bagaimana cara memproteksi agar nilai dari properti chassisNumber tidak dapat diubah? Nah, ketika kita berhadapan dengan kasus seperti ini, kita bisa memanfaatkan properti getter dan setter.
+            Sebelum memecahkan masalah di atas, ketahuilah bahwa ada dua tipe properti, yaitu data property dan accessor property.
+            Data property merupakan properti yang sejauh ini kita lihat, properti yang langsung menampung sebuah nilai di dalam sebuah objek.
+            Sedangkan accessor property merupakan properti yang dikontrol oleh sebuah getter dan setter. Nilai yang didapatkan dari properti tersebut dikontrol oleh method get dan cara menetapkan nilai tersebut dikontrol oleh method set.
+            Berikut contoh dari accessor property.
+        */
+        class User {
+        constructor(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+ 
+        get fullName() {
+            return `${this.firstName} ${this.lastName}`;
+        }
+ 
+        set fullName(fullName) {
+            const [firstName, lastName] = fullName.split(' ');
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+    }
+    /*
+        1. method getter harus mengembalikan sebuah nilai dan nilai tersebut akan menjadi nilai properti;
+        2. method setter harus menerima satu argumen yang nilainya diambil dari operand ke dua ketika melakukan assignment operator.
+    */
+    
+const user = new User('John', 'Doe');
+console.log(user);
+console.log(user.fullName);
+ 
+user.fullName = 'Fulan Fulanah';
+console.log(user);
+console.log(user.fullName);
+    </script>
+</body>
+</html>

@@ -1,2 +1,2 @@
 # belajar_js
-Tempat catatan dari event dicoding x aws
+Tempat Catatan Dari Event Dicoding x AWS
