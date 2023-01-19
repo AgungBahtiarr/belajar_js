@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis OOP</title>
+</head>
+<body>
+    <script>
+        class Animal { //superClass
+            constructor(name, age, isMammal){
+                this.name = name;
+                this.age = age;
+                this.isMammal = isMammal;
+            }
+        }
+
+        class Rabbit extends Animal{ //subClass atau turunan
+            constructor(name,age,isMammal){ //mengambil properties apa saja yang diturunkan
+                super(name, age); //Mengikuti nilai dari superclass
+                this.isMammal = true; //punya nilai sendiri
+            }
+            eat(){
+                return `${this.name} sedang makan!`
+            }
+        }
+
+        class Eagle extends Animal{
+            constructor(name,age,isMammal){
+                super(name, age);
+                this.isMammal = false;
+            }
+            fly(){
+                return `${this.name} sedang terbang!`;
+            }
+        }
+
+        const myRabbit = new Rabbit("Labi", 2);
+        const myEagle = new Eagle("Elo", 4);
+    </script>
+</body>
+</html>

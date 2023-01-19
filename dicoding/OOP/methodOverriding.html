@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Method Overriding</title>
+</head>
+<body>
+    <script>
+        /*
+        Konsep overriding juga bisa diterapkan pada method class.
+        Method overriding biasanya dilakukan ketika kita ingin mengubah implementasi method warisan superclass.
+        Contohnya, pada class MailService terdapat method send() yang sudah didefinisikan implementasinya. 
+        Namun, jika pada subclass WhatsAppService kita membutuhkan implementasi yang berbeda, kita bisa override method send().
+
+        Cara override method pada subclass mirip seperti override constructor, tetapi kita tidak perlu memanggil method super di dalamnya.
+        */
+class MailService {
+  constructor(sender) {
+    this.sender = sender;
+  }
+ 
+  sendMessage(message, receiver) {
+    console.log(`${this.sender} sent ${message} to ${receiver}`);
+  }
+}
+ 
+class WhatsAppService extends MailService {
+  constructor(sender, isBusiness) {
+    super(sender);
+    this.isBusiness = isBusiness;
+  }
+ 
+  // Overriding method
+  sendMessage(message, receiver) {
+    console.log(`${this.sender} sent ${message} to ${receiver} via WhatsApp`);
+  }
+}
+ 
+ 
+const mailService = new MailService('someSender');
+const whatsappService = new WhatsAppService('+6281234567890', true);
+ 
+mailService.sendMessage('Hai, apa kabar?', 'someReceiver');
+whatsappService.sendMessage('Hai, apa kabar?', '+6289876543210');    
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overriding</title>
+</head>
+<body>
+    <script>
+        /**
+        Konsep lain yang lekat dengan pewarisan adalah overriding.
+        Overriding di dalam OOP merupakan fitur yang memperbolehkan subclass mendefinisikan implementasinya sendiri pada sebuah method yang sebenarnya sudah didefinisikan pada superclass-nya.
+        Overriding diterapkan ketika kita ingin menetapkan implementasi yang spesifik di subclass pada sebuah method yang berasal dari superclass.
+        Overriding juga biasa diterapkan ketika kita ingin menambah properti baru secara spesifik pada sebuah subclass.
+
+        CONSTRUCTOR OVERRIDING
+        Constructor merupakan method spesial pada class yang akan dipanggil pada saat pembuatan instance,
+        lebih tepatnya ketika menggunakan keyword new diikuti dengan nama class.
+        */
+        const mailService = new MailService();
+
+    class MailService {
+      constructor(sender) {
+        this.sender = sender;
+      }
+    }
+     
+    class WhatsAppService extends MailService {
+      // overriding constructor
+      constructor(sender, isBusiness) { // isBusiness Merupakan Properties baru
+        super(sender);
+        this.isBusiness = isBusiness;
+      }
+    }
+    </script>
+</body>
+</html>
