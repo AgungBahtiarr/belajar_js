@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konsep Dalam Functional</title>
+</head>
+<body>
+    <script>
+        // PURE FUNCTION
+        // Apa artinya? Pure Function merupakan konsep dari pembuatan fungsi yang mengharuskan fungsi
+        // untuk tidak bergantung terhadap nilai yang berada di luar fungsi atau parameternya.
+
+        //contoh impure function
+        var  pi = 3.14; //impure function karena membutuhkan nilai di luar dari fungsinya
+
+        const luasLingkaranImpure = (jarijari) => {
+            return pi * jarijari * jarijari;
+        };
+        console.log(luasLingkaranImpure(5));
+
+        // contoh pure function
+        const luasLingkaranPure = (jarijari) => { //pure karna sudah tidak bergantung dari nilai di luar fungsi
+            return 3.14 *  jarijari * jarijari;
+        };
+        console.log(luasLingkaranPure(5));
+
+        /**
+         * Apa artinya? Pure Function merupakan konsep dari pembuatan fungsi yang mengharuskan fungsi untuk tidak
+         * bergantung terhadap nilai yang berada di luar fungsi atau parameternya.
+        */
+
+
+        //IMMUTABILITY
+        /**
+         * Konsep yang kedua adalah immutability.
+         * Immutable berarti sebuah objek tidak boleh diubah setelah objek tersebut dibuat.
+         * Kontras dengan mutable yang artinya objek boleh diubah setelah objek tersebut dibuat.
+         * 
+         * Anda bisa lihat sebelumnya pada contoh penggunaan array map. Ketika menggunakan array.map(),
+         * alih-alih ia mengubah nilai dari array itu sendiri, malah ia membuat atau menghasilkan array baru.
+         */
+        const user = {
+            firstname: 'Harry',
+            lastName: 'Protter', // ups, typo!
+        }
+        const renameLastNameUser = (newLastName, user) => { 
+            user.lastName = newLastName; //mengubah nilai objek secara langsung tidak immutable
+        }
+        renameLastNameUser('Potter', user);
+        console.log(user);
+
+        //contoh yang immutable
+        const user2 = {
+            firstname: 'Harry',
+            lastName: 'Protter', // ups, typo!
+        }
+
+        const createUserWithNewLastName = (newLastName, user2) => {
+            return { ...user2, lastName: newLastName }
+        }
+
+        const newUser = createUserWithNewLastName('Potter', user2);
+
+        console.log(newUser);
+
+
+        //REKURSIF
+        /**
+         * Rekursif merupakan teknik pada sebuah function yang memanggil dirinya sendiri.
+         * Kita akan mencoba mengubah fungsi countDown yang biasanya kita buat menggunakan sintaksis iterasi seperti for,
+         * foreach, while seperti kode di bawah menjadi bentuk rekursif.
+         */
+
+        const countDown = start => { // Tidak Rekursif
+        do {
+            console.log(start);
+            start -=1;
+        }
+        while(start > 0);
+        };
+        
+        countDown(10);
+
+        //Rekursif
+
+        const countDownRekursif = start => {
+            if (start > 0) countDownRekursif(start-1);
+        };
+        console.log(countDownRekursif(10));
+
+        //HIGHER-ORDER FUNCTION
+        /**
+         * JavaScript memiliki kemampuan First Class Functions, karena itu fungsi pada JavaScript dapat diperlakukan layaknya sebuah data.
+         * Kita bisa menyimpan function dalam variabel, memberikan function sebagai parameter pada fungsi lainnya,
+         * hingga mengembalikan function di dalam function.
+         */
+
+         /**
+          * Higher-Order Function menjadi bagian konsep pada paradigma FP.
+          * Higher-Order Function merupakan fungsi yang dapat menerima fungsi lainnya pada argumen; 
+          * mengembalikan sebuah fungsi; atau bahkan keduanya.
+          * 
+          * Teknik Higher-Order Function biasanya digunakan untuk:
+          * Mengabstraksi atau mengisolasi sebuah aksi, event, atau menangani alur asynchronous menggunakan callback, promise, dan lainnya.
+          * Membuat utilities yang dapat digunakan di berbagai tipe data.
+          * Membuat teknik currying atau function composition.
+          * 
+          * Array map() merupakan salah satu contoh Higher-Order Function yang ada di JavaScript. 
+          * Karena dalam penggunaanya, ia menerima satu buah argumen yang merupakan sebuah function.
+          * Dengan mengetahui adanya Higher-Order Function, Anda bisa membuat fungsi map() versi Anda sendiri!
+          */
+
+        const names = ['Harry', 'Ron', 'Jeff', 'Thomas'];
+
+        const arrayMap = (arr, action) => {
+        const loopTrough = (arr, action, newArray = [], index = 0) => {
+            const item = arr[index];
+            if(!item) return newArray;
+            return loopTrough(arr, action, [...newArray, action(arr[index])], index + 1);
+        }
+
+        return loopTrough(arr, action);
+        }
+
+        const newNames = arrayMap(names, (name) => `${name}!` );
+
+        console.log({
+            names,
+            newNames,
+        });
+    </script>
+</body>
+</html>
