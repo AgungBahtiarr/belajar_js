@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array ForEach</title>
+</head>
+<body>
+    <script>
+        /**
+         * Array forEach merupakan fungsi bawaan dari array yang berfungsi untuk memanggil fungsi callback pada setiap iterasi index array.
+         * Berbeda dari fungsi array lain yang sudah kita bahas, fungsi ini tidak mengembalikan nilai apa pun. 
+         * Jadi fungsi ini secara harfiah hanya berfungsi untuk memanggil fungsi callback-nya saja, tak lebih dari itu.
+         * Melalui fungsi ini, Anda dapat mengubah sintaks perulangan berdasarkan jumlah array secara imperatif menjadi deklaratif.
+         */
+        // Cara Imperatif
+        const namesImperatif = ['Harry', 'Ron', 'Jeff', 'Thomas'];
+ 
+        for(let i = 0; i < namesImperatif.length; i++) {
+            console.log(`Hello, ${namesImperatif[i]}!`);
+        }
+
+        //Cara Deklaratif
+        const namesDeklaratif = ['Harry', 'Ron', 'Jeff', 'Thomas'];
+ 
+        namesDeklaratif.forEach((name) => {
+            console.log(`Hello, ${name}!`);
+        });
+
+        /**
+         * Notes
+         * Namun, ketahuilah bahwa ketika menggunakan forEach, kita tidak bisa menggunakan
+         * operator break atau continue pada proses perulangan (Anda bisa melakukannya pada perulangan for). 
+         * Hal ini juga berlaku ketika pada fungsi map dan filter.
+         */
+        
+ 
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Map</title>
+</head>
+<body>
+    <script>
+        /**
+         * Dengan menerapkan konsep-konsep yang ada di dalam paradigma FP, fungsi yang Anda buat akan bersifat reusable. 
+         * Karena fungsi yang Anda buat merupakan pure function, ia tidak akan dipengaruhi ataupun mempengaruhi keadaan di/dari luar.
+         * Hal ini tentu membuat fungsi dapat digunakan berkali-kali tanpa khawatir mendapatkan hasil di luar ekspektasi Anda.
+         */
+
+         //ARRAY MAP
+         /**
+          * Fungsi array.map() merupakan fungsi bawaan dari array yang sangat berguna dan banyak sekali digunakan.
+          * Fungsi ini dapat dipanggil dari sebuah data bertipe array dan menerima satu buah callback function.
+          * ['Harry', 'Ron', 'Jeff', 'Thomas'].map(() => { });
+          * Callback function tersebut akan dipanggil sebanyak jumlah panjang
+          * array dan akan memiliki akses pada index array sesuai dengan iterasinya.
+          * ['Harry', 'Ron', 'Jeff', 'Thomas'].map((name) => { });
+          * Seperti yang Anda ketahui di awal, fungsi map akan mengembalikan array baru.
+          * Nilai tiap item pada array yang dikembalikan, dihasilkan dari kembalian callback function-nya.
+          * Karena callback function dapat mengakses item array, biasanya developer menggunakannya untuk menghasilkan nilai baru.
+          */
+        
+        const newArray = ['Harry', 'Ron', 'Jeff', 'Thomas'].map((name) => { return `${name}!`});
+        console.log(newArray);
+    </script>
+</body>
+</html>

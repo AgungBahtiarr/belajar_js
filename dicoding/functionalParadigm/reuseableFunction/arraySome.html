@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Some</title>
+</head>
+<body>
+    <script>
+        /**
+         * array.some() merupakan fungsi bawaan dari array yang cukup sering digunakan. Fungsi ini akan menghasilkan nilai boolean.
+         * 
+         * arr.some(callback(element, [index], [array]), [thisArg])
+         * 
+         * Nilai yang dihasilkan didasarkan pada pernyataan apakah ada setidaknya satu dari deretan nilai dalam array tersebut 
+         * lolos berdasarkan kriteria yang kita tuliskan dalam callback function.
+         * Contoh penggunaannya misalkan kita ingin mengetahui apakah dalam deretan angka terdapat angka genap.
+         */
+        const array = [1, 2, 3, 4, 5];
+        const even = array.some(element => element % 2 === 0);
+    
+        console.log(even);
+
+    </script>
+</body>
+</html>
