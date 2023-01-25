@@ -13,10 +13,13 @@
  * pada folder yang sama, maka kita cukup menuliskannya dengan ./state.js.
  */
 
-const coffeeStock = require('./state');
+/**
+ * Cara mengimport beberapa nilai sekaligus dengan tanda {}
+ */
+const {coffeeStock, isCoffeeMachineReady} = require('./state');
 
 const makeCoffee = (type, miligram) => {
-    if(coffeeStock[type]>=miligram){
+    if(coffeeStock[type]>=miligram && isCoffeeMachineReady){
         console.log("Kope Berhasil Dibuat")
     }else{
         console.log("Stock Kopi Habis")

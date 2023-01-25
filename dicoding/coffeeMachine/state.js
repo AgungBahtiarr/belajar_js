@@ -17,4 +17,8 @@ const coffeeStock = {
     liberica: 200
   };
 
-module.exports = coffeeStock;
+const isCoffeeMachineReady = true;
+/**
+ * Cara mengexport beberapa nilai sekaligus dengan tanda {}
+ */
+module.exports = {coffeeStock, isCoffeeMachineReady};
