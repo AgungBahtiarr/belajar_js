@@ -17,6 +17,8 @@
  * Cara mengimport beberapa nilai sekaligus dengan tanda {}
  */
 const {coffeeStock, isCoffeeMachineReady} = require('./state');
+// Bisa juga dengan menggunakan import { coffeeStock, isCoffeeMachineReady } from './state.js';
+// Jangan Lupa tambahkan "type" = module di package.json
 
 const makeCoffee = (type, miligram) => {
     if(coffeeStock[type]>=miligram && isCoffeeMachineReady){
