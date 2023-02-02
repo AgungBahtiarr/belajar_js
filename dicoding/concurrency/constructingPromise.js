@@ -6,8 +6,9 @@
  * Di dalam constructor Promise, kita perlu menetapkan resolver function atau bisa disebut executor function. 
  * Fungsi tersebut akan dijalankan secara otomatis ketika constructor Promise dipanggil.
  * 
- * 
- *     const executorFunction = (resolve, reject) => {
+ *
+ */ 
+      const executorFunction = (resolve, reject) => {
         const isCoffeeMakerReady = true;
         if (isCoffeeMakerReady) {
             resolve("Kopi berhasil dibuat");
@@ -23,7 +24,7 @@
     const coffeePromise = makeCoffee();
     console.log(coffeePromise);
      
-     
+/**     
     output
     Promise { 'Kopi berhasil dibuat' }
 */
@@ -40,5 +41,5 @@
  * reject() adalah parameter kedua pada executor function. 
    Parameter ini merupakan fungsi yang dapat menerima satu parameter dan digunakan untuk memberikan alasan kenapa Promise tidak dapat terpenuhi. 
    Ketika fungsi ini terpanggil, kondisi Promise akan berubah dari pending menjadi rejected.
-   
+
  */
